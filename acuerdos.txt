@@ -1,1 +1,2 @@
 Horario de práctica: martes
+Semana 4: avance temporal para practicar git stash.
