@@ -1,4 +1,4 @@
-# practicas-poo-equipo
+# Practicas-poo-equipo
 
 Prácticas de Git, GitHub y programación orientada a objetos del curso Técnicas de Programación Orientada a Objetos.
 
@@ -10,3 +10,7 @@ Desarrollar las prácticas de Git, GitHub y programación orientada a objetos de
 
 - Mario Saucedo
 - Pendiente de completar los otros cuatro integrantes.
+
+## Semana 2
+
+Práctica de creación de ramas y fusión de cambios con Git.
