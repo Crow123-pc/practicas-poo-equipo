@@ -3,6 +3,16 @@
 Proyecto de Técnicas de Programación Orientada a Objetos, semanas 7 a 11.
 La aplicación administra participantes, talleres, inscripciones, asistencia y evaluaciones mediante un menú de consola. Incluye 40 requerimientos documentados; RF01 a RF15 están implementados.
 
+## Abrir en Apache NetBeans
+
+1. Extraer el ZIP completo. Mantener juntos `build.xml`, `nbproject` y `src`.
+2. En NetBeans elegir Archivo > Abrir proyecto y seleccionar `BienestarDigital_NetBeans`.
+3. Ejecutar el proyecto con el boton verde. La clase principal ya esta configurada como `bienestar.Main`.
+4. Usar JDK 17 o superior. Las opciones aparecen en el panel Output o Salida y se responden escribiendo alli y pulsando Enter.
+5. Para las 36 pruebas, usar Probar proyecto. Tambien se puede ejecutar `probar.cmd`.
+
+No hace falta crear otro proyecto ni abrir los siete archivos por separado.
+
 ## Ejecutar en Windows
 
 1. Instalar un JDK 17 o superior y comprobar `java -version` y `javac -version`.
@@ -37,7 +47,7 @@ Cada modificación se guarda automáticamente. El archivo usa UTF-8, punto y com
 Abrir `probar.cmd` o ejecutar:
 
 ```powershell
-javac -encoding UTF-8 --release 17 -d build src/bienestar/*.java pruebas/PruebasSistema.java
+javac -encoding UTF-8 --release 17 -d build src/bienestar/*.java pruebas/bienestar/PruebasSistema.java
 java -cp build bienestar.PruebasSistema
 ```
 
