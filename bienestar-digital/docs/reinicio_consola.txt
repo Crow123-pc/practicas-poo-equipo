@@ -1,0 +1,29 @@
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: P001 | Ana prueba actualizada | 17 años | 5to secundaria
+Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código del taller: Inscripcion[taller=T001, participante=P001, asistencia=PENDIENTE, nota=null]
+Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Sesión finalizada

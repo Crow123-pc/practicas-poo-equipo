@@ -1,0 +1,84 @@
+# Diagrama de clases
+
+```mermaid
+classDiagram
+class Main {
+  -Scanner entrada
+  -ServicioTalleres servicio
+  +main(String[] args)
+  -ejecutar()
+}
+class ServicioTalleres {
+  -Path archivo
+  -Map participantes
+  -Map talleres
+  -Map inscripciones
+  +registrarParticipante(String, String, int, String)
+  +registrarParticipante(Participante)
+  +listarParticipantes() List
+  +buscarParticipante(String) Participante
+  +actualizarParticipante(String, String, int, String)
+  +eliminarParticipante(String)
+  +crearTaller(String, String, LocalDate, int, int)
+  +listarTalleres() List
+  +buscarTaller(String) Taller
+  +actualizarTaller(String, String, LocalDate, int, int)
+  +inscribir(String, String)
+  +listarInscritos(String) List
+  +cancelarInscripcion(String, String)
+  +registrarAsistencia(String, String, Asistencia)
+  +registrarEvaluacion(String, String, int)
+  +exportarReporte(String, Path) Path
+  -cargar()
+  -confirmar(Map, Map, Map)
+}
+class Participante {
+  <<record>>
+  -String codigo
+  -String nombre
+  -int edad
+  -String grado
+}
+class Taller {
+  <<record>>
+  -String codigo
+  -String titulo
+  -LocalDate fecha
+  -int minutos
+  -int cupo
+}
+class Inscripcion {
+  <<record>>
+  -String taller
+  -String participante
+  -Asistencia asistencia
+  -Integer nota
+}
+class Asistencia {
+  <<enumeration>>
+  PENDIENTE
+  PRESENTE
+  AUSENTE
+}
+class ArchivoCsv {
+  +linea(String...) String
+  +separar(String) List
+  +leer(Path) List
+  +guardar(Path, List)
+}
+class Validador {
+  ~texto(String, String, int) String
+  ~codigo(String) String
+}
+Main --> ServicioTalleres
+ServicioTalleres "1" *-- "0..*" Participante
+ServicioTalleres "1" *-- "0..*" Taller
+ServicioTalleres "1" *-- "0..*" Inscripcion
+Participante "1" <-- "0..*" Inscripcion : codigo participante
+Taller "1" <-- "0..*" Inscripcion : codigo taller
+Inscripcion --> Asistencia
+ServicioTalleres ..> ArchivoCsv
+Participante ..> Validador
+Taller ..> Validador
+Inscripcion ..> Validador
+```

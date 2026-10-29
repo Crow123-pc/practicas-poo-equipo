@@ -1,0 +1,6 @@
+build/
+datos/
+reportes/
+*.class
+*.tmp
+*.jar
