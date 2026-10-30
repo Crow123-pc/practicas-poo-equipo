@@ -1,0 +1,178 @@
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Sin registros
+Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Sin registros
+Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código: Nombre: Edad: Grado: Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código: Nombre: Edad: Grado: Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código: P001 | Ana de prueba | 16 años | 5to secundaria
+Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código: Nombre nuevo: Edad: Grado: Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código: Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código del taller: Título: Fecha AAAA-MM-DD: Duración en minutos: Cupo: Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: T001 | Bienestar digital | 2026-10-19 | 60 min | cupo 30
+Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código del taller: T001 | Bienestar digital | 2026-10-19 | 60 min | cupo 30
+Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código del taller: Título nuevo: Fecha AAAA-MM-DD: Duración en minutos: Cupo: Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código del taller: Código del participante: Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código del taller: Inscripcion[taller=T001, participante=P001, asistencia=PENDIENTE, nota=null]
+Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código del taller: Código del participante: Estado PRESENTE, AUSENTE o PENDIENTE: Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código del taller: Código del participante: Nota de 0 a 20: Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código del taller: Ruta del reporte, por ejemplo reportes/taller.csv: Reporte: C:\Users\Administrator\Documents\Codex\2026-10-29\ho\work\reportes\demostracion.csv
+Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código del taller: Código del participante: Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Código del taller: Código del participante: Operación completada
+
+BIENESTAR DIGITAL - GESTIÓN DE TALLERES
+1 Registrar participante   2 Listar participantes   3 Buscar participante
+4 Actualizar participante  5 Eliminar participante  6 Crear taller
+7 Listar talleres          8 Buscar taller          9 Actualizar taller
+10 Inscribir              11 Listar inscritos      12 Cancelar inscripción
+13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV
+0 Salir
+Opción: Sesión finalizada
