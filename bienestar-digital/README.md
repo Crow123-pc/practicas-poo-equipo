@@ -73,7 +73,7 @@ Si una fila es inválida o repite un código, se informa su número y no se impo
 - `src/bienestar`: interfaz, entidades, reglas y acceso CSV.
 - `pruebas`: pruebas de aceptación ejecutables.
 - `docs`: 40 requerimientos, historias, diagrama, manejo de archivos y resultados.
-- `../outputs/semanas_12_13`: informe integral de las semanas 1 a 13, informe específico de las semanas 12 y 13, plantilla Excel y JAR.
+- `../outputs/semanas_12_13`: informe integral de las semanas 1 a 13, plantilla Excel actualizada y JAR.
 - `datos` y `reportes`: se crean al usar la aplicación y están excluidos de Git.
 
 Las entidades se expresan mediante records Java inmutables con validación en sus constructores. El servicio aplica las reglas de negocio. La persistencia confirma los cambios en memoria después de escribir correctamente el archivo. El registro de participantes tiene métodos sobrecargados y mantiene el enfoque de colecciones y excepciones practicado en la semana 5.
