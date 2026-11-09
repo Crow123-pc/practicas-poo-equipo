@@ -2,13 +2,17 @@ package bienestar;
 
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.Window;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+import javax.swing.Timer;
 
 /** Comprueba eventos reales de las tres vistas sin depender de ratón ni datos del usuario. */
 public final class PruebasInterfazSwing {
@@ -45,6 +49,15 @@ public final class PruebasInterfazSwing {
         if (!condicion) throw new AssertionError(mensaje);
     }
 
+    private static boolean muestraRechazo(Container raiz) {
+        for (Component componente : raiz.getComponents()) {
+            if (componente instanceof JLabel etiqueta
+                    && etiqueta.getText().startsWith("Operación rechazada:")) return true;
+            if (componente instanceof Container contenedor && muestraRechazo(contenedor)) return true;
+        }
+        return false;
+    }
+
     public static void main(String[] args) throws Exception {
         Path archivo = Files.createTempDirectory("interfaz-bienestar-").resolve("sistema.csv");
         ServicioTalleres servicio = new ServicioTalleres(archivo);
@@ -54,7 +67,9 @@ public final class PruebasInterfazSwing {
                 JTabbedPane vistas = buscar(app.getContentPane(), JTabbedPane.class, "vistas");
                 comprobar(vistas != null && vistas.getTabCount() == 3, "Deben existir tres vistas");
 
+                vistas.setSelectedIndex(0);
                 Container participantes = (Container) vistas.getComponentAt(0);
+                comprobar(vistas.getSelectedComponent() == participantes, "Debe navegar a participantes");
                 escribir(participantes, "participante.codigo", "P001");
                 escribir(participantes, "participante.nombre", "Ana de prueba");
                 escribir(participantes, "participante.edad", "16");
@@ -66,7 +81,24 @@ public final class PruebasInterfazSwing {
                         && buscar(participantes, JTable.class, null).getRowCount() == 1,
                         "El evento de registro debe actualizar la vista y el servicio");
 
+                escribir(participantes, "participante.codigo", "P002");
+                escribir(participantes, "participante.edad", "0");
+                Timer cierre = new Timer(300, evento -> {
+                    for (Window ventana : Window.getWindows()) {
+                        if (ventana instanceof JDialog dialogo && dialogo.isVisible()) dialogo.dispose();
+                    }
+                });
+                cierre.setRepeats(false);
+                cierre.start();
+                registrar.doClick();
+                comprobar(servicio.listarParticipantes().size() == 1
+                        && buscar(participantes, JTable.class, null).getRowCount() == 1
+                        && muestraRechazo(app.getContentPane()),
+                        "La edad inválida debe mostrar rechazo sin modificar datos");
+
+                vistas.setSelectedIndex(1);
                 Container talleres = (Container) vistas.getComponentAt(1);
+                comprobar(vistas.getSelectedComponent() == talleres, "Debe navegar a talleres");
                 escribir(talleres, "taller.codigo", "T001");
                 escribir(talleres, "taller.titulo", "Bienestar digital");
                 boton(talleres, "Crear · RF06").doClick();
@@ -74,7 +106,9 @@ public final class PruebasInterfazSwing {
                         && buscar(talleres, JTable.class, null).getRowCount() == 1,
                         "El evento de creación debe actualizar el taller");
 
+                vistas.setSelectedIndex(2);
                 Container inscripciones = (Container) vistas.getComponentAt(2);
+                comprobar(vistas.getSelectedComponent() == inscripciones, "Debe navegar a inscripciones");
                 escribir(inscripciones, "inscripcion.taller", "T001");
                 escribir(inscripciones, "inscripcion.participante", "P001");
                 boton(inscripciones, "Inscribir · RF10").doClick();
@@ -92,7 +126,7 @@ public final class PruebasInterfazSwing {
         ServicioTalleres reabierto = new ServicioTalleres(archivo);
         comprobar(reabierto.listarInscritos("T001").get(0).nota() == 18,
                 "Los cambios de la interfaz deben persistir al reiniciar");
-        System.out.println("OK GUI: tres vistas, eventos, tablas y persistencia");
+        System.out.println("OK GUI: navegación de tres vistas, eventos, validación, tablas y persistencia");
     }
 
     private static String botones(Container raiz) {

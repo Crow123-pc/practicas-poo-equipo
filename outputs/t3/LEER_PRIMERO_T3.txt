@@ -1,7 +1,7 @@
 ENTREGA T3 - MARIO ANTONIO SAUCEDO GUERRERO
 
 ARCHIVO INDIVIDUAL PARA SUBIR A LA PLATAFORMA:
-Sustentacion_T3_Mario_Saucedo.pptx
+Sustentacion_T3_POO_Mario_Saucedo.pptx
 
 Es la presentación de apoyo de 15 diapositivas. Incluye notas del expositor.
 Si el aula virtual pide solo un archivo para T3, sube este PPTX.
@@ -12,10 +12,21 @@ ARCHIVOS DE RESPALDO PARA LLEVAR A LA SUSTENTACION:
 - bienestar-digital/: proyecto completo para abrir en NetBeans.
 - Guion_y_preguntas_T3_Mario.md: ensayo y respuestas técnicas.
 - Historias_de_usuario_semanas_12_y_13.xlsx: estado de historias y aceptación.
-- Entrega_semanas_7_a_11_con_fotos.7z: formatos e informe social previos.
+- 05_RESPONSABILIDAD_SOCIAL/: informe, acta, ficha, solicitud y fotografías
+  extraídos de la entrega original de las semanas 7 a 11.
 
-El archivo Entrega_T3_Mario_Saucedo.zip reúne estos respaldos. No sustituye
+El archivo T3 POO.zip reúne estos respaldos en carpetas separadas. No sustituye
 las tres entregas grupales de prácticas de campo ya solicitadas por el docente.
+
+PRUEBA DE LOS REQUISITOS Y DE LA INTERFAZ:
+El proyecto incluye docs/matriz_trazabilidad_t3.md, que relaciona RF01-RF25
+con su botón y vista Swing, y docs/evidencias_t3/ejecucion_pruebas.txt.
+
+PRIVACIDAD DE LA EVIDENCIA SOCIAL:
+La ficha técnica original contiene datos personales de beneficiarios. Mantener
+el ZIP completo para la entrega académica privada y no publicarlo en GitHub.
+Antes de difundir fotografías identificables de estudiantes, verificar la
+autorización correspondiente.
 
 REPOSITORIO DEL SOFTWARE:
 https://github.com/Crow123-pc/practicas-poo-equipo/tree/codex/t3-sustentacion/bienestar-digital
@@ -29,5 +40,6 @@ EJECUCION:
 ESTADO COMPROBADO:
 25 RF implementados de 40 documentados; 58 casos del servicio conformes;
 prueba adicional de tres vistas, eventos, tablas y persistencia. Los requisitos
-RF26-RF40 permanecen planificados. La bitácora del informe distingue
-estimaciones de reunión de registros exactos de horas individuales.
+RF26-RF40 permanecen planificados. La bitácora distingue las reuniones
+estimadas de las 3H por integrante consignadas en la ficha social; no se
+inventan horas individuales de programación.

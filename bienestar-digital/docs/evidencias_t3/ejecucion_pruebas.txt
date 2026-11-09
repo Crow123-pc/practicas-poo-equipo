@@ -456,10 +456,10 @@ test:
      [java] OK RF25 Expositor vacío
      [java] OK ARCH05 Compatibilidad con CSV anterior
      [java] OK ARCH06 Proteger archivo de datos
-     [java] RESULTADO: 58 casos conformes. Datos temporales: /var/folders/04/s2_jt6m926v10tz04ymcq3sm0000gn/T/pruebas-bienestar-12382433857597211332
+     [java] RESULTADO: 58 casos conformes. Datos temporales: /var/folders/04/s2_jt6m926v10tz04ymcq3sm0000gn/T/pruebas-bienestar-16837963645694257638
 
 test-gui:
-     [java] OK GUI: tres vistas, eventos, tablas y persistencia
+     [java] OK GUI: navegación de tres vistas, eventos, validación, tablas y persistencia
 
 BUILD SUCCESSFUL
-Total time: 5 seconds
+Total time: 6 seconds

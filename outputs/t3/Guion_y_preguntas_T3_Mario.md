@@ -9,7 +9,7 @@ La presentación de 15 diapositivas es un apoyo visual. Ensaya con el proyecto a
 3. **Alcance:** se documentaron 40 requisitos e historias; RF01-RF25 están implementados; RF26-RF40 siguen planificados. No digas que las 40 funciones están terminadas.
 4. **Diseño:** `AppSwing` construye la ventana; `ServicioTalleres` valida y coordina; `Participante`, `Taller` e `Inscripcion` representan datos; `ArchivoCsv` lee y guarda.
 5. **Demostración:** sigue los cinco pasos de la diapositiva 14. Usa códigos nuevos si P001 o T001 ya existen. Muestra el rechazo de una edad inválida y vuelve a abrir la aplicación con el mismo archivo para verificar persistencia.
-6. **Responsabilidad social:** explica el tema, la charla de una hora, las preguntas y dinámicas, y las evidencias. El resultado comprobable es la sesión realizada; no afirmes un cambio duradero de hábitos sin medición.
+6. **Responsabilidad social:** explica el tema, la charla de una hora, las preguntas y dinámicas, y las evidencias. La ficha técnica consigna 3H por integrante para la actividad completa. El resultado comprobable es la sesión realizada; no afirmes un cambio duradero de hábitos sin medición.
 
 ## Preguntas técnicas probables
 
@@ -46,9 +46,18 @@ Explica con precisión tus commits, ramas y pull requests visibles en GitHub. Pu
 **¿Qué limitaciones tiene el avance?**  
 RF26-RF40 siguen planificados. El almacenamiento local CSV sirve para esta versión académica; una solución para uso simultáneo por varias personas requeriría otra capa de persistencia y control de acceso. La charla social no tiene medición de impacto a largo plazo.
 
+**¿Qué reflexión ética dejó la charla?**
+
+La ficha de beneficiarios incluye datos personales de escolares y debe quedar en la entrega privada al docente. Las fotografías identificables requieren autorización específica para difusión pública; los documentos revisados no prueban ese permiso. Explica que la actividad buscó informar sin juzgar hábitos individuales y que no se midió un cambio posterior de conducta.
+
+**¿Cuántas horas trabajó el equipo?**
+
+Se recuerdan reuniones de coordinación de aproximadamente una hora por fin de semana; el informe las marca como estimación. La ficha social registra 3H por integrante para esa actividad. No existe un registro exacto de horas individuales de programación, así que no des cifras inventadas.
+
 ## Antes de entrar a sustentar
 
 - Abre `bienestar-digital` en NetBeans y confirma que la clase principal sea `bienestar.AppSwing`.
 - Haz una prueba rápida de registro, creación de taller, inscripción y cierre/reapertura.
 - Ten cerca el informe final, el Excel de historias, el diagrama y el registro de pruebas.
+- Abre el [PR #5](https://github.com/Crow123-pc/practicas-poo-equipo/pull/5) o la rama `codex/t3-sustentacion` para enseñar el código T3; la página inicial del repositorio puede mostrar otra rama.
 - Sube el archivo PPTX individual de apoyo a T3. El informe y el software respaldan la sustentación; las tres entregas grupales del ciclo deben permanecer en la plataforma según la consigna del docente.

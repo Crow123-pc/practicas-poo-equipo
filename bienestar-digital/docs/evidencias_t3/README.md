@@ -8,7 +8,7 @@ La aplicación abre por defecto `bienestar.AppSwing` en NetBeans. Su ventana con
 | `02_talleres.png` | Creación y listado de talleres; navegación a la segunda vista. |
 | `03_inscripciones.png` | Inscripción de un participante y vista de resultados. |
 | `04_validacion_edad.png` | Rechazo de una edad fuera de rango y retroalimentación visible en rojo. |
-| `ejecucion_pruebas.txt` | 58 casos del servicio conformes y prueba de integración de tres vistas, eventos, tablas y persistencia. |
+| `ejecucion_pruebas.txt` | 58 casos del servicio conformes y prueba de navegación entre tres vistas, eventos, rechazo de edad inválida sin mutación, tablas y persistencia. |
 
 Para reproducir la prueba en un entorno con JDK 17 o superior y Ant:
 
