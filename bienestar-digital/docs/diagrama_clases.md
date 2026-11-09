@@ -8,6 +8,21 @@ class Main {
   +main(String[] args)
   -ejecutar()
 }
+class AppSwing {
+  -ServicioTalleres servicio
+  -JLabel estado
+  +AppSwing(ServicioTalleres)
+  +main(String[] args)
+  -participantes() JPanel
+  -talleres() JPanel
+  -inscripciones() JPanel
+}
+class JFrame {
+  <<Swing>>
+}
+class JTabbedPane {
+  <<Swing>>
+}
 class ServicioTalleres {
   -Path archivo
   -Map participantes
@@ -94,9 +109,12 @@ class Validador {
   ~codigo(String) String
 }
 Main --> ServicioTalleres
-ServicioTalleres "1" *-- "0..*" Participante
-ServicioTalleres "1" *-- "0..*" Taller
-ServicioTalleres "1" *-- "0..*" Inscripcion
+AppSwing --|> JFrame
+AppSwing --> ServicioTalleres : delega las operaciones
+AppSwing *-- JTabbedPane : contiene tres vistas
+ServicioTalleres "1" o-- "0..*" Participante : administra
+ServicioTalleres "1" o-- "0..*" Taller : administra
+ServicioTalleres "1" o-- "0..*" Inscripcion : administra
 Participante "1" <-- "0..*" Inscripcion : codigo participante
 Taller "1" <-- "0..*" Inscripcion : codigo taller
 Inscripcion --> Asistencia
@@ -108,3 +126,5 @@ Participante ..> Validador
 Taller ..> Validador
 Inscripcion ..> Validador
 ```
+
+La interfaz `AppSwing` hereda de `JFrame` y contiene las tres vistas de Swing. Delega la lógica de negocio a `ServicioTalleres`. El servicio administra colecciones de participantes, talleres e inscripciones; una inscripción conserva los códigos que la asocian a un participante y un taller.

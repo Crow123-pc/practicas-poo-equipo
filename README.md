@@ -8,7 +8,7 @@ Desarrollar las prácticas de Git, GitHub y programación orientada a objetos de
 
 ## Entrega de las semanas 12 y 13
 
-El proyecto de talleres de bienestar digital está en [bienestar-digital](bienestar-digital/). Documenta 40 requerimientos y 40 historias de usuario; RF01 a RF25 están implementados. El proyecto NetBeans incluye 58 pruebas ejecutables y conserva los registros en CSV UTF-8.
+El proyecto de talleres de bienestar digital está en [bienestar-digital](bienestar-digital/). Documenta 40 requerimientos y 40 historias de usuario; RF01 a RF25 están implementados. El proyecto NetBeans incluye una interfaz Swing de tres vistas, el menú de consola, 58 pruebas ejecutables y registros en CSV UTF-8.
 
 El [informe integral de las semanas 1 a 13](outputs/semanas_12_13/Informe_integral_semanas_1_a_13.pdf), el formato actualizado de historias y el JAR ejecutable están en [outputs/semanas_12_13](outputs/semanas_12_13/). Para abrir, compilar y probar el software, seguir las instrucciones de [bienestar-digital/README.md](bienestar-digital/README.md).
 

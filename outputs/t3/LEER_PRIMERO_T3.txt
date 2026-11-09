@@ -1,0 +1,33 @@
+ENTREGA T3 - MARIO ANTONIO SAUCEDO GUERRERO
+
+ARCHIVO INDIVIDUAL PARA SUBIR A LA PLATAFORMA:
+Sustentacion_T3_Mario_Saucedo.pptx
+
+Es la presentación de apoyo de 15 diapositivas. Incluye notas del expositor.
+Si el aula virtual pide solo un archivo para T3, sube este PPTX.
+
+ARCHIVOS DE RESPALDO PARA LLEVAR A LA SUSTENTACION:
+- Informe_final_T3_semanas_1_a_13.pdf: informe acumulado y anexo de T3.
+- bienestar-digital-T3.jar: aplicación Java con interfaz Swing.
+- bienestar-digital/: proyecto completo para abrir en NetBeans.
+- Guion_y_preguntas_T3_Mario.md: ensayo y respuestas técnicas.
+- Historias_de_usuario_semanas_12_y_13.xlsx: estado de historias y aceptación.
+- Entrega_semanas_7_a_11_con_fotos.7z: formatos e informe social previos.
+
+El archivo Entrega_T3_Mario_Saucedo.zip reúne estos respaldos. No sustituye
+las tres entregas grupales de prácticas de campo ya solicitadas por el docente.
+
+REPOSITORIO DEL SOFTWARE:
+https://github.com/Crow123-pc/practicas-poo-equipo/tree/codex/t3-sustentacion/bienestar-digital
+
+EJECUCION:
+1. Abrir la carpeta bienestar-digital en Apache NetBeans con JDK 17 o superior.
+2. Ejecutar el proyecto: la clase principal es bienestar.AppSwing.
+3. La aplicación crea/usa datos/sistema.csv en el directorio de trabajo.
+4. Para repetir las pruebas con Ant: ant test-gui.
+
+ESTADO COMPROBADO:
+25 RF implementados de 40 documentados; 58 casos del servicio conformes;
+prueba adicional de tres vistas, eventos, tablas y persistencia. Los requisitos
+RF26-RF40 permanecen planificados. La bitácora del informe distingue
+estimaciones de reunión de registros exactos de horas individuales.

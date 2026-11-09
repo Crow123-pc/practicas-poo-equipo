@@ -1,27 +1,27 @@
 # Sistema de gestión de talleres de bienestar digital
 
 Proyecto de Técnicas de Programación Orientada a Objetos, semanas 7 a 13.
-La aplicación administra participantes, talleres, inscripciones, asistencia y evaluaciones mediante un menú de consola. Incluye 40 requerimientos documentados; RF01 a RF25 están implementados.
+La aplicación administra participantes, talleres, inscripciones, asistencia y evaluaciones. La evaluación T3 incorpora una interfaz Swing de tres vistas y conserva el menú de consola. Incluye 40 requerimientos documentados; RF01 a RF25 están implementados.
 
 ## Abrir en Apache NetBeans
 
 1. Extraer el ZIP completo. Mantener juntos `build.xml`, `nbproject` y `src`.
 2. En NetBeans elegir Archivo > Abrir proyecto y seleccionar `bienestar-digital`, la carpeta que contiene `build.xml` y `nbproject`.
-3. Ejecutar el proyecto con el boton verde. La clase principal ya esta configurada como `bienestar.Main`.
-4. Usar JDK 17 o superior. Las opciones aparecen en el panel Output o Salida y se responden escribiendo alli y pulsando Enter.
+3. Ejecutar el proyecto con el botón verde. La clase principal está configurada como `bienestar.AppSwing`.
+4. Usar JDK 17 o superior. Se abre una ventana con las vistas Participantes, Talleres e Inscripciones y resultados.
 5. Para las 58 pruebas, usar Probar proyecto. Tambien se puede ejecutar `probar.cmd`.
 
-No hace falta crear otro proyecto ni abrir los siete archivos por separado.
+No hace falta crear otro proyecto ni abrir los archivos Java por separado. El menú anterior sigue disponible con `bienestar.Main` o `ejecutar.cmd`.
 El proyecto compila con compatibilidad Java 17 mediante la opción `--release 17` definida en `build.xml`. Si una copia extraída anteriormente muestra en rojo una advertencia sobre `-source 17`, volver a extraer la entrega actual y abrir esa carpeta en NetBeans.
 
 ## Ejecutar en Windows
 
 1. Instalar un JDK 17 o superior y comprobar `java -version` y `javac -version`.
 2. Extraer el ZIP completo en una carpeta de trabajo.
-3. Abrir `ejecutar.cmd`. No hace falta instalar bibliotecas ni una base de datos.
-4. Las opciones 1 a 25 corresponden a RF01 a RF25. La opción 0 termina la sesión.
+3. Abrir `ejecutar_gui.cmd` para la interfaz visual o `ejecutar.cmd` para el menú de consola. No hace falta instalar bibliotecas ni una base de datos.
+4. La interfaz visual organiza las operaciones en tres vistas; el menú conserva las opciones 1 a 25.
 
-El ZIP incluye también `bienestar-digital.jar`, que puede ejecutarse con `java -jar bienestar-digital.jar` si ya se dispone de Java 17 o superior. Los fuentes y scripts permiten recompilarlo.
+El ZIP incluye también `bienestar-digital.jar`, que inicia la interfaz visual con `java -jar bienestar-digital.jar` si ya se dispone de Java 17 o superior. Los fuentes y scripts permiten recompilarlo.
 
 Alternativa desde PowerShell, dentro de esta carpeta:
 
@@ -29,6 +29,16 @@ Alternativa desde PowerShell, dentro de esta carpeta:
 javac -encoding UTF-8 --release 17 -d build src/bienestar/*.java
 java -cp build bienestar.Main
 ```
+
+Para iniciar la ventana desde PowerShell, sustituir la segunda línea por `java -cp build bienestar.AppSwing`.
+
+## Interfaz de la evaluación T3
+
+- **Participantes:** registro, búsqueda, actualización, eliminación, filtro por grado, orden e importación CSV.
+- **Talleres:** creación, búsqueda, actualización, eliminación, filtro por fechas, consulta de cupos y asignación de expositor.
+- **Inscripciones y resultados:** inscripción, listado, cancelación, asistencia, evaluación, historial, resumen, promedio y exportación CSV.
+
+Los botones llaman a `ServicioTalleres` y muestran los datos en tablas. Las validaciones de las entidades y del servicio siguen siendo las mismas que usa la consola. Los errores se muestran en un cuadro de aviso y en la barra inferior. Los cambios se guardan automáticamente en `datos/sistema.csv`.
 
 ## Ejemplo de demostración
 
