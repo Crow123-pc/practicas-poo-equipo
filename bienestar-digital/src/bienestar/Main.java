@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
-/** Interfaz por consola: las opciones 1 a 15 corresponden a RF01 a RF15. */
+/** Interfaz por consola: las opciones 1 a 25 corresponden a RF01 a RF25. */
 public final class Main {
     private final Scanner entrada = new Scanner(System.in, java.nio.charset.StandardCharsets.UTF_8);
     private final ServicioTalleres servicio;
@@ -36,6 +36,10 @@ public final class Main {
             System.out.println("7 Listar talleres          8 Buscar taller          9 Actualizar taller");
             System.out.println("10 Inscribir              11 Listar inscritos      12 Cancelar inscripción");
             System.out.println("13 Registrar asistencia   14 Registrar evaluación  15 Exportar reporte CSV");
+            System.out.println("16 Eliminar taller       17 Historial participante  18 Filtrar por grado");
+            System.out.println("19 Talleres por fechas   20 Cupos disponibles      21 Resumen asistencia");
+            System.out.println("22 Promedio evaluación  23 Ordenar participantes  24 Importar CSV");
+            System.out.println("25 Asignar expositor");
             System.out.println("0 Salir");
             try {
                 int opcion=numero("Opción");
@@ -56,9 +60,23 @@ public final class Main {
                     case 13 -> servicio.registrarAsistencia(pedir("Código del taller"),pedir("Código del participante"),Inscripcion.Asistencia.valueOf(pedir("Estado PRESENTE, AUSENTE o PENDIENTE").strip().toUpperCase(java.util.Locale.ROOT)));
                     case 14 -> servicio.registrarEvaluacion(pedir("Código del taller"),pedir("Código del participante"),numero("Nota de 0 a 20"));
                     case 15 -> System.out.println("Reporte: "+servicio.exportarReporte(pedir("Código del taller"),Path.of(pedir("Ruta del reporte, por ejemplo reportes/taller.csv"))));
+                    case 16 -> servicio.eliminarTaller(pedir("Código del taller"));
+                    case 17 -> mostrar(servicio.historialParticipante(pedir("Código del participante")));
+                    case 18 -> mostrar(servicio.filtrarParticipantesPorGrado(pedir("Grado")));
+                    case 19 -> mostrar(servicio.filtrarTalleresPorFechas(LocalDate.parse(pedir("Fecha inicial AAAA-MM-DD")),LocalDate.parse(pedir("Fecha final AAAA-MM-DD"))));
+                    case 20 -> System.out.println("Cupos disponibles: "+servicio.cuposDisponibles(pedir("Código del taller")));
+                    case 21 -> System.out.println(servicio.resumenAsistencia(pedir("Código del taller")));
+                    case 22 -> {
+                        var promedio=servicio.promedioEvaluacion(pedir("Código del taller"));
+                        if(promedio.isPresent()) System.out.printf(java.util.Locale.ROOT,"Promedio: %.2f%n",promedio.getAsDouble());
+                        else System.out.println("Sin evaluaciones");
+                    }
+                    case 23 -> mostrar(servicio.participantesOrdenadosPorNombre());
+                    case 24 -> System.out.println("Participantes importados: "+servicio.importarParticipantes(Path.of(pedir("Ruta del CSV"))));
+                    case 25 -> servicio.asignarExpositor(pedir("Código del taller"),pedir("Nombre del expositor"));
                     default -> { System.out.println("Opción inválida"); continue; }
                 }
-                if(opcion>=1 && opcion<=15) System.out.println("Operación completada");
+                if(opcion>=1 && opcion<=25) System.out.println("Operación completada");
             } catch(NumberFormatException ex) { System.out.println("Entrada inválida: ingrese un número entero"); }
               catch(DateTimeParseException ex) { System.out.println("Fecha inválida: use AAAA-MM-DD y una fecha existente"); }
               catch(IllegalArgumentException | IOException ex) { System.out.println("Operación rechazada: "+ex.getMessage()); }

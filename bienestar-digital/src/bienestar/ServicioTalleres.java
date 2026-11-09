@@ -3,26 +3,39 @@ package bienestar;
 import java.io.IOException;
 import java.nio.file.*;
 import java.time.LocalDate;
+import java.text.Collator;
 import java.util.*;
 import static bienestar.Inscripcion.Asistencia;
 
 /** Reglas del negocio. Cada cambio se guarda antes de confirmarse en memoria. */
 public final class ServicioTalleres {
     private static final String CABECERA = "tipo;codigo;dato1;dato2;dato3;dato4;dato5";
+    private static final List<String> CABECERA_IMPORTACION = List.of("codigo", "nombre", "edad", "grado");
     private final Path archivo;
     private Map<String, Participante> participantes = new LinkedHashMap<>();
     private Map<String, Taller> talleres = new LinkedHashMap<>();
     private Map<String, Inscripcion> inscripciones = new LinkedHashMap<>();
 
     public ServicioTalleres(Path archivo) throws IOException {
-        this.archivo = archivo.toAbsolutePath();
+        this.archivo = archivo.toAbsolutePath().normalize();
         if (Files.exists(this.archivo)) cargar();
+    }
+    public record Historial(Taller taller, Asistencia asistencia, Integer nota) {
+        @Override public String toString() {
+            return taller.codigo() + " | " + taller.titulo() + " | " + asistencia
+                    + " | nota: " + (nota == null ? "pendiente" : nota);
+        }
+    }
+    public record ResumenAsistencia(int presentes, int ausentes, int pendientes) {
+        @Override public String toString() {
+            return "Presentes: " + presentes + " | Ausentes: " + ausentes + " | Pendientes: " + pendientes;
+        }
     }
     private static String clave(String taller, String participante) { return taller + ":" + participante; }
     private void confirmar(Map<String, Participante> p, Map<String, Taller> t, Map<String, Inscripcion> i) throws IOException {
         List<String> filas = new ArrayList<>(); filas.add(CABECERA);
         p.values().forEach(v -> filas.add(ArchivoCsv.linea("P", v.codigo(), v.nombre(), ""+v.edad(), v.grado(), "", "")));
-        t.values().forEach(v -> filas.add(ArchivoCsv.linea("T", v.codigo(), v.titulo(), v.fecha().toString(), ""+v.minutos(), ""+v.cupo(), "")));
+        t.values().forEach(v -> filas.add(ArchivoCsv.linea("T", v.codigo(), v.titulo(), v.fecha().toString(), ""+v.minutos(), ""+v.cupo(), v.expositor())));
         i.values().forEach(v -> filas.add(ArchivoCsv.linea("I", v.taller(), v.participante(), v.asistencia().name(), v.nota()==null?"":""+v.nota(), "", "")));
         ArchivoCsv.guardar(archivo, filas);
         participantes = p; talleres = t; inscripciones = i;
@@ -42,7 +55,7 @@ public final class ServicioTalleres {
                         if (p.putIfAbsent(v.codigo(), v)!=null) throw new IllegalArgumentException("Participante duplicado");
                     }
                     case "T" -> {
-                        Taller v = new Taller(c.get(1), c.get(2), LocalDate.parse(c.get(3)), Integer.parseInt(c.get(4)), Integer.parseInt(c.get(5)));
+                        Taller v = new Taller(c.get(1), c.get(2), LocalDate.parse(c.get(3)), Integer.parseInt(c.get(4)), Integer.parseInt(c.get(5)), c.get(6));
                         if (t.putIfAbsent(v.codigo(), v)!=null) throw new IllegalArgumentException("Taller duplicado");
                     }
                     case "I" -> {
@@ -96,7 +109,8 @@ public final class ServicioTalleres {
         if(v==null) throw new IllegalArgumentException("Taller no encontrado"); return v;
     }
     public void actualizarTaller(String codigo,String titulo,LocalDate fecha,int minutos,int cupo) throws IOException { // RF09
-        String id=buscarTaller(codigo).codigo(); Taller v=new Taller(id,titulo,fecha,minutos,cupo);
+        Taller anterior=buscarTaller(codigo);
+        String id=anterior.codigo(); Taller v=new Taller(id,titulo,fecha,minutos,cupo,anterior.expositor());
         if(listarInscritos(id).size()>cupo) throw new IllegalArgumentException("El cupo no puede ser menor al número de inscritos");
         var nuevos=new LinkedHashMap<>(talleres); nuevos.put(id,v); confirmar(participantes,nuevos,inscripciones);
     }
@@ -133,7 +147,10 @@ public final class ServicioTalleres {
     }
     public Path exportarReporte(String taller,Path destino) throws IOException { // RF15
         Taller t=buscarTaller(taller);
-        if(destino.toAbsolutePath().normalize().equals(archivo.normalize())) throw new IllegalArgumentException("El reporte debe guardarse en otro archivo");
+        Path rutaReporte=destino.toAbsolutePath().normalize();
+        if(rutaReporte.equals(archivo) || (Files.exists(rutaReporte) && Files.exists(archivo)
+                && Files.isSameFile(rutaReporte, archivo)))
+            throw new IllegalArgumentException("El reporte debe guardarse en otro archivo");
         List<String> filas=new ArrayList<>();
         filas.add(ArchivoCsv.linea("taller","titulo","fecha","participante","nombre","grado","asistencia","nota"));
         for(Inscripcion i:listarInscritos(t.codigo())) {
@@ -144,4 +161,85 @@ public final class ServicioTalleres {
         ArchivoCsv.guardar(destino,filas); return destino.toAbsolutePath();
     }
     private static String celdaSegura(String valor) { return "=+-@".indexOf(valor.charAt(0))>=0 ? "'"+valor : valor; }
+
+    public void eliminarTaller(String codigo) throws IOException { // RF16
+        String id=buscarTaller(codigo).codigo();
+        if(inscripciones.values().stream().anyMatch(v -> v.taller().equals(id)))
+            throw new IllegalArgumentException("Resuelva las inscripciones antes de eliminar el taller");
+        var nuevos=new LinkedHashMap<>(talleres); nuevos.remove(id);
+        confirmar(participantes,nuevos,inscripciones);
+    }
+    public List<Historial> historialParticipante(String codigo) { // RF17
+        String id=buscarParticipante(codigo).codigo();
+        return inscripciones.values().stream().filter(v -> v.participante().equals(id))
+                .map(v -> new Historial(talleres.get(v.taller()),v.asistencia(),v.nota())).toList();
+    }
+    public List<Participante> filtrarParticipantesPorGrado(String grado) { // RF18
+        String filtro=Validador.texto(grado,"Grado",60);
+        return participantes.values().stream().filter(v -> v.grado().equalsIgnoreCase(filtro)).toList();
+    }
+    public List<Taller> filtrarTalleresPorFechas(LocalDate inicio, LocalDate fin) { // RF19
+        if(inicio==null || fin==null || inicio.isAfter(fin))
+            throw new IllegalArgumentException("Corrija el intervalo de fechas");
+        return talleres.values().stream().filter(v -> !v.fecha().isBefore(inicio) && !v.fecha().isAfter(fin)).toList();
+    }
+    public int cuposDisponibles(String codigo) { // RF20
+        Taller t=buscarTaller(codigo);
+        return t.cupo()-listarInscritos(t.codigo()).size();
+    }
+    public ResumenAsistencia resumenAsistencia(String codigo) { // RF21
+        List<Inscripcion> inscritos=listarInscritos(codigo);
+        int presentes=0,ausentes=0,pendientes=0;
+        for(Inscripcion v:inscritos) {
+            switch(v.asistencia()) {
+                case PRESENTE -> presentes++;
+                case AUSENTE -> ausentes++;
+                case PENDIENTE -> pendientes++;
+            }
+        }
+        return new ResumenAsistencia(presentes,ausentes,pendientes);
+    }
+    public OptionalDouble promedioEvaluacion(String codigo) { // RF22
+        return listarInscritos(codigo).stream().filter(v -> v.nota()!=null)
+                .mapToInt(Inscripcion::nota).average();
+    }
+    public List<Participante> participantesOrdenadosPorNombre() { // RF23
+        Collator espanol=Collator.getInstance(Locale.forLanguageTag("es-PE"));
+        espanol.setStrength(Collator.PRIMARY);
+        return participantes.values().stream().sorted((a,b) -> {
+            int comparacion=espanol.compare(a.nombre(),b.nombre());
+            return comparacion!=0 ? comparacion : a.codigo().compareTo(b.codigo());
+        }).toList();
+    }
+    public int importarParticipantes(Path ruta) throws IOException { // RF24
+        List<String> filas=ArchivoCsv.leer(ruta);
+        if(filas.isEmpty()) throw new IllegalArgumentException("Archivo de importación vacío");
+        try {
+            String cabecera=filas.get(0);
+            if(cabecera.startsWith("\uFEFF")) cabecera=cabecera.substring(1);
+            if(!ArchivoCsv.separar(cabecera).equals(CABECERA_IMPORTACION))
+                throw new IllegalArgumentException("Cabecera esperada: codigo;nombre;edad;grado");
+        } catch(IOException ex) { throw new IllegalArgumentException("Cabecera CSV inválida",ex); }
+        var nuevos=new LinkedHashMap<>(participantes);
+        for(int n=1;n<filas.size();n++) {
+            try {
+                List<String> campos=ArchivoCsv.separar(filas.get(n));
+                if(campos.size()!=4) throw new IllegalArgumentException("Se esperaban cuatro columnas");
+                Participante v=new Participante(campos.get(0),campos.get(1),Integer.parseInt(campos.get(2)),campos.get(3));
+                if(nuevos.putIfAbsent(v.codigo(),v)!=null) throw new IllegalArgumentException("Código duplicado: " + v.codigo());
+            } catch(IOException | RuntimeException ex) {
+                throw new IllegalArgumentException("Línea " + (n+1) + ": " + ex.getMessage(),ex);
+            }
+        }
+        if(filas.size()==1) throw new IllegalArgumentException("El archivo no contiene participantes");
+        confirmar(nuevos,talleres,inscripciones);
+        return filas.size()-1;
+    }
+    public void asignarExpositor(String codigo,String expositor) throws IOException { // RF25
+        Taller anterior=buscarTaller(codigo);
+        String nombre=Validador.texto(expositor,"Expositor",100);
+        Taller actualizado=new Taller(anterior.codigo(),anterior.titulo(),anterior.fecha(),anterior.minutos(),anterior.cupo(),nombre);
+        var nuevos=new LinkedHashMap<>(talleres); nuevos.put(actualizado.codigo(),actualizado);
+        confirmar(participantes,nuevos,inscripciones);
+    }
 }

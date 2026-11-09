@@ -29,6 +29,16 @@ class ServicioTalleres {
   +registrarAsistencia(String, String, Asistencia)
   +registrarEvaluacion(String, String, int)
   +exportarReporte(String, Path) Path
+  +eliminarTaller(String)
+  +historialParticipante(String) List
+  +filtrarParticipantesPorGrado(String) List
+  +filtrarTalleresPorFechas(LocalDate, LocalDate) List
+  +cuposDisponibles(String) int
+  +resumenAsistencia(String) ResumenAsistencia
+  +promedioEvaluacion(String) OptionalDouble
+  +participantesOrdenadosPorNombre() List
+  +importarParticipantes(Path) int
+  +asignarExpositor(String, String)
   -cargar()
   -confirmar(Map, Map, Map)
 }
@@ -46,6 +56,19 @@ class Taller {
   -LocalDate fecha
   -int minutos
   -int cupo
+  -String expositor
+}
+class Historial {
+  <<record>>
+  -Taller taller
+  -Asistencia asistencia
+  -Integer nota
+}
+class ResumenAsistencia {
+  <<record>>
+  -int presentes
+  -int ausentes
+  -int pendientes
 }
 class Inscripcion {
   <<record>>
@@ -78,6 +101,9 @@ Participante "1" <-- "0..*" Inscripcion : codigo participante
 Taller "1" <-- "0..*" Inscripcion : codigo taller
 Inscripcion --> Asistencia
 ServicioTalleres ..> ArchivoCsv
+ServicioTalleres ..> Historial
+ServicioTalleres ..> ResumenAsistencia
+ServicioTalleres ..> Validador
 Participante ..> Validador
 Taller ..> Validador
 Inscripcion ..> Validador
