@@ -12,6 +12,7 @@ La aplicación administra participantes, talleres, inscripciones, asistencia y e
 5. Para las 58 pruebas, usar Probar proyecto. Tambien se puede ejecutar `probar.cmd`.
 
 No hace falta crear otro proyecto ni abrir los siete archivos por separado.
+El proyecto compila con compatibilidad Java 17 mediante la opción `--release 17` definida en `build.xml`. Si una copia extraída anteriormente muestra en rojo una advertencia sobre `-source 17`, volver a extraer la entrega actual y abrir esa carpeta en NetBeans.
 
 ## Ejecutar en Windows
 
@@ -71,7 +72,8 @@ Si una fila es inválida o repite un código, se informa su número y no se impo
 
 - `src/bienestar`: interfaz, entidades, reglas y acceso CSV.
 - `pruebas`: pruebas de aceptación ejecutables.
-- `docs`: 40 requerimientos, historias, diagrama, manejo de archivos, informe de las semanas 12 y 13 y resultados.
+- `docs`: 40 requerimientos, historias, diagrama, manejo de archivos y resultados.
+- `../outputs/semanas_12_13`: informe integral de las semanas 1 a 13, informe específico de las semanas 12 y 13, plantilla Excel y JAR.
 - `datos` y `reportes`: se crean al usar la aplicación y están excluidos de Git.
 
 Las entidades se expresan mediante records Java inmutables con validación en sus constructores. El servicio aplica las reglas de negocio. La persistencia confirma los cambios en memoria después de escribir correctamente el archivo. El registro de participantes tiene métodos sobrecargados y mantiene el enfoque de colecciones y excepciones practicado en la semana 5.

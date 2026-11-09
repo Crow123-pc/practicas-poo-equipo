@@ -6,3 +6,5 @@
 Clase principal: bienestar.Main
 Java: 17 o superior.
 El programa es de consola: escribe las opciones en Output / Salida.
+La compilacion actual usa --release 17. Si aparece el aviso rojo de -source 17,
+se esta abriendo una copia anterior; extrae de nuevo la entrega actual.
