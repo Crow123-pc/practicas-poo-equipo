@@ -3,8 +3,9 @@
 3. Selecciona bienestar-digital, la carpeta que contiene build.xml y nbproject.
 4. Pulsa Abrir proyecto y despues el boton verde Ejecutar.
 
-Clase principal: bienestar.Main
+Clase principal: bienestar.AppSwing
 Java: 17 o superior.
-El programa es de consola: escribe las opciones en Output / Salida.
+Se abre una ventana con tres vistas: Participantes, Talleres e Inscripciones.
+El menu de consola anterior sigue disponible en bienestar.Main.
 La compilacion actual usa --release 17. Si aparece el aviso rojo de -source 17,
 se esta abriendo una copia anterior; extrae de nuevo la entrega actual.

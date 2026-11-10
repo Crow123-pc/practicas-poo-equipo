@@ -1,0 +1,43 @@
+T3 POO - GUIA RAPIDA DE EVIDENCIAS
+
+1. FUNCIONALIDADES JAVA (hasta 6 puntos)
+   RF01-RF25 implementados. Codigo en 03_SOFTWARE_JAVA y en el PR #5.
+   RF26-RF40 permanecen planificados. Demostrar en vivo al menos 10 RF.
+
+2. CRITERIOS DE ACEPTACION (hasta 4 puntos)
+   Catalogo de 40 historias y dos escenarios por historia en el Excel y
+   requisitos_e_historias.md. RF01-RF25: 50 escenarios y 8 pruebas adicionales
+   conformes. Ver resultados_pruebas.csv, ejecucion_pruebas.txt, capturas y
+   matriz_trazabilidad_t3.md (RF -> vista y boton Swing).
+
+3. INTERFAZ GRAFICA (hasta 3 puntos)
+   AppSwing abre 3 vistas: Participantes, Talleres, Inscripciones y resultados.
+   La prueba GUI recorre las pestanas, pulsa eventos, comprueba una validacion
+   fallida sin mutacion y reabre los datos guardados. Mostrarla en NetBeans.
+
+4. POO Y CALIDAD (hasta 3 puntos)
+   Diagrama y fuentes: entidades validadas, mapas privados, servicio de
+   negocio, asociacion de Inscripcion por codigos, agregacion de entidades,
+   composicion de vistas Swing y herencia AppSwing/JFrame. Explicar decisiones.
+
+5. PRACTICAS DE CAMPO (hasta 2 puntos)
+   Informe final de 31 paginas: semanas 1-13, productos, problemas, soluciones,
+   aprendizajes y bitacora. Las reuniones ~1 h/semana son estimaciones.
+   Comprobar en el aula virtual las tres entregas grupales; el ZIP no acredita
+   por si mismo que la plataforma las haya recibido.
+
+6. RESPONSABILIDAD SOCIAL (hasta 2 puntos)
+   Charla de una hora, 23 beneficiarios segun ficha, 3H por integrante en ficha,
+   informe, acta, solicitud y fotos. El informe T3 separa resultado observable
+   de impacto no medido y contiene reflexion etica. La ficha con datos de
+   escolares va solo en este paquete privado; no subirla a GitHub.
+
+ARCHIVO INDIVIDUAL PARA LA PLATAFORMA:
+01_PRESENTACION_INDIVIDUAL/Sustentacion_T3_POO_Mario_Saucedo.pptx
+La presentacion contiene 15 diapositivas y notas del expositor.
+
+REPOSITORIO T3:
+https://github.com/Crow123-pc/practicas-poo-equipo/pull/5
+
+La calificacion final depende de la demostracion y las respuestas individuales
+de Mario; los archivos aportan evidencia, pero no sustituyen la sustentacion.

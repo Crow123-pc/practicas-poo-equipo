@@ -1,0 +1,465 @@
+Buildfile: /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/build.xml
+
+-pre-init:
+
+-init-private:
+
+-init-user:
+
+-init-project:
+
+-init-macrodef-property:
+
+-init-modules-supported:
+
+-do-init:
+
+-post-init:
+
+-init-check:
+
+-init-ap-cmdline-properties:
+
+-init-macrodef-modulename:
+
+-init-source-module-properties:
+
+-init-macrodef-javac-with-module:
+
+-init-macrodef-javac-with-processors:
+
+-init-macrodef-javac-without-processors:
+
+-init-macrodef-javac:
+
+-init-macrodef-test-impl:
+
+-init-macrodef-junit-init:
+
+-init-test-properties:
+
+-init-macrodef-junit-prototype-with-module:
+
+-init-macrodef-junit-prototype-without-module:
+
+-init-macrodef-junit-single:
+
+-init-macrodef-junit-batch:
+
+-init-macrodef-junit:
+
+-init-macrodef-junit-impl:
+
+-init-macrodef-testng:
+
+-init-macrodef-testng-impl:
+
+-init-macrodef-test:
+
+-init-macrodef-junit-debug-impl:
+
+-init-macrodef-test-debug-junit:
+
+-init-macrodef-testng-debug:
+
+-init-macrodef-testng-debug-impl:
+
+-init-macrodef-test-debug-testng:
+
+-init-macrodef-test-debug:
+
+-init-debug-args:
+
+-init-macrodef-nbjpda:
+
+-init-macrodef-debug:
+
+-init-macrodef-java-with-module:
+
+-init-macrodef-java-with-unnamed-module:
+
+-init-macrodef-java-without-module:
+
+-init-macrodef-java:
+
+-init-presetdef-jar:
+
+-init-ap-cmdline-supported:
+
+-init-ap-cmdline:
+
+init:
+
+-deps-clean-init:
+
+deps-clean:
+
+-warn-already-built-clean:
+[propertyfile] Updating property file: /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/build/built-clean.properties
+
+-do-clean:
+   [delete] Deleting directory /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/build
+
+-post-clean:
+
+clean:
+
+-pre-init:
+
+-init-private:
+
+-init-user:
+
+-init-project:
+
+-init-macrodef-property:
+
+-init-modules-supported:
+
+-do-init:
+
+-post-init:
+
+-init-check:
+
+-init-ap-cmdline-properties:
+
+-init-macrodef-modulename:
+
+-init-source-module-properties:
+
+-init-macrodef-javac-with-module:
+
+-init-macrodef-javac-with-processors:
+
+-init-macrodef-javac-without-processors:
+
+-init-macrodef-javac:
+
+-init-macrodef-test-impl:
+
+-init-macrodef-junit-init:
+
+-init-test-properties:
+
+-init-macrodef-junit-prototype-with-module:
+
+-init-macrodef-junit-prototype-without-module:
+
+-init-macrodef-junit-single:
+
+-init-macrodef-junit-batch:
+
+-init-macrodef-junit:
+
+-init-macrodef-junit-impl:
+
+-init-macrodef-testng:
+
+-init-macrodef-testng-impl:
+
+-init-macrodef-test:
+
+-init-macrodef-junit-debug-impl:
+
+-init-macrodef-test-debug-junit:
+
+-init-macrodef-testng-debug:
+
+-init-macrodef-testng-debug-impl:
+
+-init-macrodef-test-debug-testng:
+
+-init-macrodef-test-debug:
+
+-init-debug-args:
+
+-init-macrodef-nbjpda:
+
+-init-macrodef-debug:
+
+-init-macrodef-java-with-module:
+
+-init-macrodef-java-with-unnamed-module:
+
+-init-macrodef-java-without-module:
+
+-init-macrodef-java:
+
+-init-presetdef-jar:
+
+-init-ap-cmdline-supported:
+
+-init-ap-cmdline:
+
+init:
+
+-deps-jar-init:
+
+deps-jar:
+    [mkdir] Created dir: /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/build
+
+-warn-already-built-jar:
+[propertyfile] Updating property file: /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/build/built-jar.properties
+
+-check-automatic-build:
+
+-clean-after-automatic-build:
+
+-verify-automatic-build:
+
+-pre-pre-compile:
+    [mkdir] Created dir: /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/build/classes
+
+-pre-compile:
+
+-copy-persistence-xml:
+
+-compile-depend:
+
+-do-compile:
+    [javac] Compiling 8 source files to /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/build/classes
+
+-post-compile:
+
+compile:
+
+-pre-jar:
+
+-check-module-main-class:
+
+-set-module-main-class:
+
+-pre-pre-jar:
+    [mkdir] Created dir: /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/dist
+
+-do-jar-create-manifest:
+
+-do-jar-copy-manifest:
+     [copy] Copying 1 file to /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/build
+
+-do-jar-set-mainclass:
+
+-do-jar-set-profile:
+
+-do-jar-set-splashscreen:
+
+-check-do-mkdist:
+
+-do-jar-jar:
+[j2seproject1:jar] Building jar: /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/dist/bienestar-digital.jar
+     [echo] To run this application from the command line without Ant, try:
+     [echo] /Applications/Apache NetBeans.app/Contents/Home/bin/java -cp /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/dist/bienestar-digital.jar bienestar.AppSwing
+
+-init-macrodef-copylibs:
+
+-do-jar-copylibs:
+
+-do-jar-delete-manifest:
+
+-do-jar-without-libraries:
+
+-do-jar-with-libraries:
+
+-post-jar:
+
+-do-jar:
+
+-pre-deploy:
+
+-check-jlink:
+
+-do-deploy:
+
+-post-deploy:
+
+deploy:
+
+jar:
+
+-pre-init:
+
+-init-private:
+
+-init-user:
+
+-init-project:
+
+-init-macrodef-property:
+
+-init-modules-supported:
+
+-do-init:
+
+-post-init:
+
+-init-check:
+
+-init-ap-cmdline-properties:
+
+-init-macrodef-modulename:
+
+-init-source-module-properties:
+
+-init-macrodef-javac-with-module:
+
+-init-macrodef-javac-with-processors:
+
+-init-macrodef-javac-without-processors:
+
+-init-macrodef-javac:
+
+-init-macrodef-test-impl:
+
+-init-macrodef-junit-init:
+
+-init-test-properties:
+
+-init-macrodef-junit-prototype-with-module:
+
+-init-macrodef-junit-prototype-without-module:
+
+-init-macrodef-junit-single:
+
+-init-macrodef-junit-batch:
+
+-init-macrodef-junit:
+
+-init-macrodef-junit-impl:
+
+-init-macrodef-testng:
+
+-init-macrodef-testng-impl:
+
+-init-macrodef-test:
+
+-init-macrodef-junit-debug-impl:
+
+-init-macrodef-test-debug-junit:
+
+-init-macrodef-testng-debug:
+
+-init-macrodef-testng-debug-impl:
+
+-init-macrodef-test-debug-testng:
+
+-init-macrodef-test-debug:
+
+-init-debug-args:
+
+-init-macrodef-nbjpda:
+
+-init-macrodef-debug:
+
+-init-macrodef-java-with-module:
+
+-init-macrodef-java-with-unnamed-module:
+
+-init-macrodef-java-without-module:
+
+-init-macrodef-java:
+
+-init-presetdef-jar:
+
+-init-ap-cmdline-supported:
+
+-init-ap-cmdline:
+
+init:
+
+-deps-jar-init:
+
+deps-jar:
+
+-warn-already-built-jar:
+     [echo] Cycle detected: BienestarDigital was already built
+[propertyfile] Updating property file: /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/build/built-jar.properties
+
+-check-automatic-build:
+
+-clean-after-automatic-build:
+
+-verify-automatic-build:
+
+-pre-pre-compile:
+
+-pre-compile:
+
+-copy-persistence-xml:
+
+-compile-depend:
+
+-do-compile:
+
+-post-compile:
+
+compile:
+
+test:
+    [mkdir] Created dir: /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/build/test/classes
+    [javac] Compiling 3 source files to /Users/mario/Documents/ChatGPT/PROYECTO POO/practicas-poo-equipo/bienestar-digital/build/test/classes
+     [java] OK RF01 Registro válido
+     [java] OK RF01 Código duplicado
+     [java] OK RF02 Listado con datos
+     [java] OK RF02 Listado vacío
+     [java] OK RF03 Búsqueda existente
+     [java] OK RF03 Búsqueda inexistente
+     [java] OK RF04 Actualización válida
+     [java] OK RF04 Edad inválida
+     [java] OK RF05 Eliminar sin inscripciones
+     [java] OK RF05 Eliminar inscrito
+     [java] OK RF06 Crear taller
+     [java] OK RF06 Taller duplicado
+     [java] OK RF07 Listado de talleres
+     [java] OK RF07 Talleres vacíos
+     [java] OK RF08 Buscar taller
+     [java] OK RF08 Taller inexistente
+     [java] OK RF09 Actualizar taller
+     [java] OK RF09 Reducir cupo bajo inscritos
+     [java] OK RF10 Inscripción válida
+     [java] OK RF10 Inscripción duplicada
+     [java] OK RF11 Listar inscritos
+     [java] OK RF11 Taller sin inscritos
+     [java] OK RF12 Cancelar inscripción
+     [java] OK RF12 Cancelar inexistente
+     [java] OK RF13 Marcar presente
+     [java] OK RF13 Asistencia sin inscripción
+     [java] OK RF14 Evaluación válida
+     [java] OK RF14 Nota fuera de rango
+     [java] OK RF15 Exportar reporte
+     [java] OK RF15 Reporte inexistente
+     [java] OK ARCH01 Persistencia y caracteres especiales
+     [java] OK ARCH02 Archivo dañado
+     [java] OK ARCH03 Fallo al guardar
+     [java] OK RF10 Cupo agotado
+     [java] OK RF14 Límites de evaluación
+     [java] OK ARCH04 Integridad referencial
+     [java] OK RF16 Eliminar taller sin inscritos
+     [java] OK RF16 Conservar taller con inscritos
+     [java] OK RF17 Historial de dos talleres
+     [java] OK RF17 Historial vacío
+     [java] OK RF18 Filtrar por grado
+     [java] OK RF18 Grado sin coincidencias
+     [java] OK RF19 Intervalo inclusivo
+     [java] OK RF19 Intervalo invertido
+     [java] OK RF20 Un cupo disponible
+     [java] OK RF20 Cupo agotado
+     [java] OK RF21 Tres estados de asistencia
+     [java] OK RF21 Resumen sin inscritos
+     [java] OK RF22 Promedio sin pendientes
+     [java] OK RF22 Sin evaluaciones
+     [java] OK RF23 Orden alfabético
+     [java] OK RF23 Desempate por código
+     [java] OK RF24 Importación completa
+     [java] OK RF24 Duplicado rechaza todo
+     [java] OK RF25 Asignar expositor
+     [java] OK RF25 Expositor vacío
+     [java] OK ARCH05 Compatibilidad con CSV anterior
+     [java] OK ARCH06 Proteger archivo de datos
+     [java] RESULTADO: 58 casos conformes. Datos temporales: /var/folders/04/s2_jt6m926v10tz04ymcq3sm0000gn/T/pruebas-bienestar-16837963645694257638
+
+test-gui:
+     [java] OK GUI: navegación de tres vistas, eventos, validación, tablas y persistencia
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
