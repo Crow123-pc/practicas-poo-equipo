@@ -1,6 +1,6 @@
 # Requerimientos e historias de usuario
 
-Alcance documentado: 40 requerimientos. Versión implementada: RF01 a RF15. RF16 a RF40 corresponden a ampliaciones planificadas. Los roles describen actores del proceso; esta versión local no implementa autenticación.
+Alcance documentado: 40 requerimientos. Versión implementada: RF01 a RF25. RF26 a RF40 corresponden a ampliaciones planificadas. Los roles describen actores del proceso; esta versión local no implementa autenticación.
 
 ## RF01 Registrar participante
 
@@ -192,7 +192,7 @@ El sistema debe permitir eliminar un taller que no tenga inscripciones.
 
 **Escenario 2. Taller con inscritos.** Dada esa condición, cuando el coordinador solicita la operación, el sistema conserva el taller y solicita resolver las inscripciones.
 
-**Estado:** Planificado, no implementado ni probado.
+**Estado:** Implementado en semana 13; ambos criterios conformes en PruebasSistema.
 
 ## RF17 Consultar historial del participante
 
@@ -204,7 +204,7 @@ El sistema debe permitir consultar los talleres en los que está inscrito un par
 
 **Escenario 2. Participante sin inscripciones.** Dada esa condición, cuando el coordinador solicita la operación, el sistema muestra un historial vacío sin crear inscripciones.
 
-**Estado:** Planificado, no implementado ni probado.
+**Estado:** Implementado en semana 13; ambos criterios conformes en PruebasSistema.
 
 ## RF18 Filtrar participantes por grado
 
@@ -216,7 +216,7 @@ El sistema debe permitir filtrar los participantes por grado de estudios.
 
 **Escenario 2. Grado sin coincidencias.** Dada esa condición, cuando el coordinador solicita la operación, el sistema muestra una lista vacía para el filtro solicitado.
 
-**Estado:** Planificado, no implementado ni probado.
+**Estado:** Implementado en semana 13; ambos criterios conformes en PruebasSistema.
 
 ## RF19 Filtrar talleres por fechas
 
@@ -228,7 +228,7 @@ El sistema debe permitir consultar talleres dentro de un intervalo de fechas inc
 
 **Escenario 2. Fecha inicial posterior a la final.** Dada esa condición, cuando el coordinador solicita la operación, el sistema rechaza el intervalo y solicita corregir las fechas.
 
-**Estado:** Planificado, no implementado ni probado.
+**Estado:** Implementado en semana 13; ambos criterios conformes en PruebasSistema.
 
 ## RF20 Consultar cupos disponibles
 
@@ -240,7 +240,7 @@ El sistema debe permitir consultar el cupo disponible de un taller.
 
 **Escenario 2. Taller con cupo agotado.** Dada esa condición, cuando el coordinador solicita la operación, el sistema muestra cero cupos disponibles.
 
-**Estado:** Planificado, no implementado ni probado.
+**Estado:** Implementado en semana 13; ambos criterios conformes en PruebasSistema.
 
 ## RF21 Consultar resumen de asistencia
 
@@ -252,7 +252,7 @@ El sistema debe permitir consultar cantidades de presentes, ausentes y pendiente
 
 **Escenario 2. Taller sin inscritos.** Dada esa condición, cuando el coordinador solicita la operación, el sistema muestra cero en los tres estados.
 
-**Estado:** Planificado, no implementado ni probado.
+**Estado:** Implementado en semana 13; ambos criterios conformes en PruebasSistema.
 
 ## RF22 Consultar promedio de evaluación
 
@@ -264,7 +264,7 @@ El sistema debe permitir consultar el promedio de las notas registradas de un ta
 
 **Escenario 2. Todas las notas sin registrar.** Dada esa condición, cuando el coordinador solicita la operación, el sistema informa Sin evaluaciones y no presenta un promedio cero.
 
-**Estado:** Planificado, no implementado ni probado.
+**Estado:** Implementado en semana 13; ambos criterios conformes en PruebasSistema.
 
 ## RF23 Ordenar participantes por nombre
 
@@ -276,7 +276,7 @@ El sistema debe permitir consultar los participantes ordenados alfabéticamente 
 
 **Escenario 2. Nombres repetidos.** Dada esa condición, cuando el coordinador solicita la operación, el sistema ordena por nombre y desempata por código.
 
-**Estado:** Planificado, no implementado ni probado.
+**Estado:** Implementado en semana 13; ambos criterios conformes en PruebasSistema.
 
 ## RF24 Importar participantes desde CSV
 
@@ -288,7 +288,7 @@ El sistema debe permitir importar un lote de participantes de un archivo CSV.
 
 **Escenario 2. Una fila con código repetido.** Dada esa condición, cuando el coordinador solicita la operación, el sistema rechaza todo el lote e identifica la fila sin importaciones parciales.
 
-**Estado:** Planificado, no implementado ni probado.
+**Estado:** Implementado en semana 13; ambos criterios conformes en PruebasSistema.
 
 ## RF25 Asignar expositor
 
@@ -300,7 +300,7 @@ El sistema debe permitir asignar el nombre del expositor responsable de un talle
 
 **Escenario 2. Nombre vacío.** Dada esa condición, cuando el coordinador solicita la operación, el sistema rechaza la asignación vacía y conserva el responsable anterior.
 
-**Estado:** Planificado, no implementado ni probado.
+**Estado:** Implementado en semana 13; ambos criterios conformes en PruebasSistema.
 
 ## RF26 Registrar institución y sección
 

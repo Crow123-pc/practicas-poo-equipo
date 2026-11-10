@@ -1,8 +1,10 @@
 1. Extrae todo el ZIP.
 2. NetBeans > Archivo > Abrir proyecto.
-3. Selecciona BienestarDigital_NetBeans, la carpeta que contiene build.xml y nbproject.
+3. Selecciona bienestar-digital, la carpeta que contiene build.xml y nbproject.
 4. Pulsa Abrir proyecto y despues el boton verde Ejecutar.
 
 Clase principal: bienestar.Main
-Java: 17 o superior. Tu NetBeans utiliza Java 21, que es compatible.
+Java: 17 o superior.
 El programa es de consola: escribe las opciones en Output / Salida.
+La compilacion actual usa --release 17. Si aparece el aviso rojo de -source 17,
+se esta abriendo una copia anterior; extrae de nuevo la entrega actual.

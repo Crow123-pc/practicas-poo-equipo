@@ -62,9 +62,31 @@
     nbproject/build-impl.xml file. 
 
     -->
-<target name="test" depends="compile" description="Ejecuta las 36 pruebas de aceptacion">
+<!-- NetBeans genera build-impl.xml. Estas tareas mantienen la compatibilidad
+     con Java 17 y evitan la advertencia de modulos en JDK posteriores. -->
+<target name="-do-compile" depends="init,deps-jar,-pre-pre-compile,-pre-compile,-copy-persistence-xml,-compile-depend" if="have.sources">
+    <javac srcdir="${src.dir}" destdir="${build.classes.dir}" encoding="${source.encoding}"
+           release="${javac.source}" includes="${includes}" excludes="${excludes}"
+           debug="${javac.debug}" includeantruntime="false">
+        <classpath path="${javac.classpath}"/>
+        <compilerarg line="${javac.compilerargs}"/>
+    </javac>
+    <copy todir="${build.classes.dir}">
+        <fileset dir="${src.dir}" includes="${includes}" excludes="${build.classes.excludes},${excludes}"/>
+    </copy>
+</target>
+<target name="-do-compile-single" depends="init,deps-jar,-pre-pre-compile">
+    <fail unless="javac.includes">Must select some files in the IDE or set javac.includes</fail>
+    <javac srcdir="${src.dir}" sourcepath="${src.dir}" destdir="${build.classes.dir}"
+           encoding="${source.encoding}" release="${javac.source}"
+           includes="${javac.includes}" debug="${javac.debug}" includeantruntime="false">
+        <classpath path="${javac.classpath}:${build.classes.dir}"/>
+        <compilerarg line="${javac.compilerargs}"/>
+    </javac>
+</target>
+<target name="test" depends="compile" description="Ejecuta las 58 pruebas de aceptacion">
     <mkdir dir="${build.test.classes.dir}"/>
-    <javac srcdir="${test.src.dir}" destdir="${build.test.classes.dir}" encoding="UTF-8" source="17" target="17" includeantruntime="false">
+    <javac srcdir="${test.src.dir}" destdir="${build.test.classes.dir}" encoding="UTF-8" release="17" includeantruntime="false">
         <classpath><pathelement location="${build.classes.dir}"/></classpath>
     </javac>
     <java classname="bienestar.PruebasSistema" fork="true" failonerror="true">
